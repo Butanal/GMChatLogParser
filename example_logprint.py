@@ -7,6 +7,6 @@ def format_date(timestamp):
 
 logparser = gmlogparser.GMLogParser("/path/to/log/folder")
 
-logs = logparser.getChatLogs(startdate=1052479002)
+logs = logparser.getChatLogs(startdate=1052479002, steamids=("STEAM_0:0:0"))
 for log in logs:
     print("[{}] {} : \"{}\"".format(format_date(log["timestamp"]), log["nick"], log["text"]))
