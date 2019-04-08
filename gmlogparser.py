@@ -57,7 +57,7 @@ class GMLogParser:
         for i in range(daterange[0], daterange[1] + 1):
             file = self.loglist[i][0]
             if file.endswith(".log"):
-                with codecs.open(self.logdir + file, "r", encoding='utf-8', errors='ignore') as f: # shitty fix for encoding errors with regular open(,,,)
+                with codecs.open(self.logdir + file, "r", encoding='utf-8', errors='ignore') as f: # shitty fix for encoding errors with regular open(...)
                     for line in f:
                         result = self.findChat(line)
                         if result and (not steamids or result["steamid"] in steamids):
